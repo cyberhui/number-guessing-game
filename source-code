@@ -1,0 +1,24 @@
+import random
+num = random.randint(1, 50)  # generates random number from 1 to 50
+n = int(input("Enter the number of rounds you would like to play: ")) # asks user for the no. of tries they would like
+
+for count in range(1, n + 1):
+  guess = int(input("Enter a whole number between 1 and 50: "))  # asks user to guess the actual number
+  while guess < 1 or guess > 50:  # checks the validity of the num entered
+    print("Invalid number. Please try again.")
+    guess = int(input("Enter a whole number between 1 and 50 again: "))
+  if guess == num:
+    print("Good job! You guessed the number :D")  # if the num entered is the same as the num generated, then the computer will print this statement
+    break
+  elif guess < num:  #tells the user that their guess is too low if the num entered is less than the num generated
+    print('Your number is too low.' + ('Try again.' if count < n else ''))
+  elif guess > num:  #tells the user that their guess is too high if the num entered is more than the num generated
+    print('Your number is too high.' + ('Try again.' if count < n else ''))
+  else:
+    print("Game over. The number was", num) # prints the actual number if all the tries have been used up by the user 
+  
+
+    
+
+
+
